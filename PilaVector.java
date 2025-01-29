@@ -34,11 +34,15 @@ public class PilaVector implements IStack {
             case '*' -> value1 * value2;
             case '/' -> value1 / value2;
             case '%' -> value1 % value2;
-
+            default -> throw new IllegalArgumentException("Operador no válido: " + operator);
         }
     }
 
-}
 
-
-
+    private void resize() {
+            capacidad *= 2; // Duplica la capacidad
+            int[] nuevoArreglo = new int[capacidad];
+            System.arraycopy(elementos, 0, nuevoArreglo, 0, tamanio);
+            elementos = nuevoArreglo;
+        }
+    }
