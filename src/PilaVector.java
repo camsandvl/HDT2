@@ -1,17 +1,22 @@
+/**
+     * Emily Góngora, Camila Sandoval, Ale Sierra
+     * Clase que contiene métodos llamados en la interfaz pop, push, y operation
+     * incluye excepciones por si el stack esta vacio o si el operador no es correcto
+     */
+
 public class PilaVector implements IStack {
     private int[] elementos;
     private int capacidad;
     private int tamano;
 
     public PilaVector() {
-        capacidad = 10;
+        capacidad = 20;
         elementos = new int[capacidad];
         tamano = 0;
     }
 
     @Override
     public void push(int value) {
-        // Si la pila está llena, se redimensiona.
         if (tamano == capacidad) {
             resize();
         }
@@ -41,6 +46,9 @@ public class PilaVector implements IStack {
         return result;
     }
 
+    /**
+     * método que permite adaptar la capacidad del stack en caso de que este esté lleno
+     */
     private void resize() {
         int nuevaCapacidad = capacidad * 2;
         int[] nuevaPila = new int[nuevaCapacidad];

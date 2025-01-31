@@ -1,3 +1,8 @@
+/**
+     * Emily Góngora, Camila Sandoval, Ale Sierra
+     * Clase que lee el archivo txt y sus operaciones en la line, muestra las operaciones realizadas y el resultado
+     */
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;

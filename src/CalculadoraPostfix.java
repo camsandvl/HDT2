@@ -12,7 +12,8 @@ public class CalculadoraPostfix {
     /**
      * @param expresion
      * @return
-     * evaluar identifica la expresión
+     * evaluar identifica la expresión, los operadores y los operandos y llama a pop cuando hay un operando después de dos números
+     * se usa una excepción cuando la expresión no da un resultado fijo o hay más de uno
      */
     public int evaluar(String expresion) {
         String[] tokens = expresion.split(" ");
@@ -38,10 +39,10 @@ public class CalculadoraPostfix {
             throw new IllegalStateException("Error: La expresión es inválida. La pila tiene más de un resultado.");
         }
 
-        return pila.pop();  // Resultado final
+        return pila.pop();  
     }
 
     private boolean esOperando(String token) {
-        return token.matches("\\d+"); // Verifica si es un número
+        return token.matches("\\d+"); 
     }
 }
